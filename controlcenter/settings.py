@@ -88,8 +88,16 @@ WSGI_APPLICATION = 'controlcenter.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME'),       # Replace with your PostgreSQL database name
+        'USER': os.environ.get('DB_USER'),       # Replace with your PostgreSQL username
+        'PASSWORD': os.environ.get('DB_PASSWORD'),  # Replace with your PostgreSQL password
+        'HOST': os.environ.get('DB_HOST'),       # Replace with your PostgreSQL host (e.g., "db.example.com")
+        'PORT': os.environ.get('DB_PORT'),       # Replace with your PostgreSQL port (default is "5432")
+        # Uncomment the following if your hoster requires SSL:
+        # 'OPTIONS': {
+        #     'sslmode': 'require',
+        # },
     }
 }
 
