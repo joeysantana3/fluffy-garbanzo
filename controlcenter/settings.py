@@ -34,7 +34,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fluffy-garbanzo.onrender.com']
 
 
 # Application definition
